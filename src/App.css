@@ -52,7 +52,7 @@ button {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 15px;
 }
 
@@ -178,9 +178,10 @@ button {
     height: 300px;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .app {
-   padding: 10px;
+    padding: 10px;
   }
 }
 
@@ -190,7 +191,7 @@ button {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.mobile-photo-container{
+.mobile-photo-container {
   margin-bottom: 50px;
   /* border: 1px solid;
   border-radius: 10px;
@@ -210,19 +211,20 @@ button {
   object-fit: cover;
 }
 
-.mobile-photo-details-container{
+.mobile-photo-details-container {
   display: flex;
   text-align: start;
-  padding:10px 2px 0px 2px;
+  padding: 10px 2px 0px 2px;
 }
 
-.mobile-photo-user-details{
+.mobile-photo-user-details {
   display: flex;
   align-items: center;
   padding: 5px;
   margin-bottom: 5px;
 }
-.mobile-photo-user-details>img{
-border-radius: 300px;
-margin-right: 10px;
+
+.mobile-photo-user-details>img {
+  border-radius: 300px;
+  margin-right: 10px;
 }
