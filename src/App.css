@@ -1,16 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 .app {
   text-align: center;
   padding: 20px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-.search-bar {
-  margin-bottom: 20px;
+.app>h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-bar-container {
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  position: relative;
+  display: inline;
+}
+
+.search-input>input {
+  padding-right: 30px;
+  border-radius: 200px;
+}
+
+.search-input>.search-icon-container {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer
 }
 
 input {
   padding: 10px;
-  width: 300px;
+  width: 60%;
   margin-right: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 button {
@@ -20,19 +52,21 @@ button {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 15px;
 }
 
 .photo {
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 300px;
 }
 
 .photo img {
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .photo-info {
@@ -50,4 +84,145 @@ button {
 
 .photo-info a:hover {
   text-decoration: underline;
+}
+
+.photo-hover-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  align-items: end;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6620352608816964) 0%, rgba(255, 255, 255, 0) 100%);
+  color: white;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.photo-hover-details {
+  font-family: Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  font-size: small;
+  padding: 0.5rem
+}
+
+.photo-hover-details>img {
+  width: 35px;
+  border-radius: 300px;
+  margin-right: 0.4rem;
+}
+
+.photo-hover-details>div {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.photo-hover-details>div>span>p {
+  margin-top: 0.2rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  min-width: 150px;
+  max-width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: medium;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.photo:hover>.photo-hover-container {
+  visibility: visible;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .app>h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  input {
+    width: 250px;
+  }
+
+  .photo {
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .app {
+   padding: 10px;
+  }
+}
+
+.mobile-gallery {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mobile-photo-container{
+  margin-bottom: 50px;
+  /* border: 1px solid;
+  border-radius: 10px;
+  padding: 5px; */
+}
+
+.mobile-photo {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.mobile-photo>img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.mobile-photo-details-container{
+  display: flex;
+  text-align: start;
+  padding:10px 2px 0px 2px;
+}
+
+.mobile-photo-user-details{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.mobile-photo-user-details>img{
+border-radius: 300px;
+margin-right: 10px;
 }
